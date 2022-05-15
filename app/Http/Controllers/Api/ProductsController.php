@@ -38,11 +38,16 @@ class ProductsController extends Controller
      */
     public function store(ProductsRequest $request)
     {
+        $validated = $request->validated();
+        
         try {
             $item = $this->repository->store($request);
-            return response()->json(['item' => $item]);
+            return ProductsResource::collection(['item' => $item]);
+            // return response()->json(['item' => $item]);
         } catch (Exception $e) {
-            return response()->json(['message' => $e->getMessage()], $e->getStatus());
+            die('aa');
+            return ProductResource::collection(['message' => $e->getMessage()], $e->getStatus());
+            // return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
     }
   

@@ -13,6 +13,16 @@ class ProductsRepository extends AppRepository
     {
         $this->model = $model;
     }
+
+    // public function store(Request $request)
+    // {
+    //     [$data,$path] = $this->setDataPayload($request);
+    //     $item = $this->model;
+    //     /$data['image'] = $path;
+    //     $item->fill($data);
+    //     $item->save();
+    //      return $item;
+    // }
     
     /**
      * set payload data for products table.
@@ -22,7 +32,14 @@ class ProductsRepository extends AppRepository
      */
     protected function setDataPayload(Request $request)
     {
-        dd($request->image);
-        return $request->all();
+        $data = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $name = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->store('public/products');
+            $data['image'] = $path;
+        }
+        // dd($request->image);
+        return $data;
     }
 }

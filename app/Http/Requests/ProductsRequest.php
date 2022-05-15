@@ -11,6 +11,7 @@ class ProductsRequest extends FormRequest
      *
      * @return bool
      */
+    protected $stopOnFirstFailure = true;
     public function authorize()
     {
         return true;
