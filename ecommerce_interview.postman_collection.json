@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "18d85b45-1dbb-40f8-8ba2-7fa9c38960c6",
+		"name": "ecommerce_interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProductCategories create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Laptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/product-categories",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductCategories List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ecommerce.test/api/product-categories",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductCategories view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Laptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/product-categories/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-categories",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductCategories update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mobile",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/product-categories/2",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-categories",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductCategories delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Laptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/product-categories/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"product-categories",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "XPS-13",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1999.99",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/thatoe/Documents/Screen Shot 2022-05-11 at 09.48.14.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/products",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Mobile",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/products",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Iphone 13 Pro",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1299.99",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/thatoe/Documents/Screen Shot 2022-05-11 at 09.48.14.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/products/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Laptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/products/2",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Computer",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/products/21",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"products",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartItems create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/cart-items",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartItems List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Mobile",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/cart-items",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartItems update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						},
+						{
+							"key": "product_id",
+							"value": "20",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/cart-items/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartItems view",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Computer",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/cart-items/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CartItems delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Laptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ecommerce.test/api/cart-items/1",
+					"host": [
+						"ecommerce",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
