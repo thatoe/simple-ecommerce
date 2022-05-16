@@ -41,7 +41,7 @@ class ProductCategoriesController extends Controller
     {
         try {
             $item = $this->repository->store($request);
-            return new ProductsResource($item);
+            return new ProductCategoriesResource($item);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
@@ -57,7 +57,7 @@ class ProductCategoriesController extends Controller
     {
         try {
             $item = $this->repository->update($id, $request);
-            return new ProductsResource($item);
+            return new ProductCategoriesResource($item);
         } catch (Exception $e) {
            return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
@@ -73,7 +73,7 @@ class ProductCategoriesController extends Controller
     {
         try {
             $item = $this->repository->show($id);
-            return new ProductsResource($item);
+            return new ProductCategoriesResource($item);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
