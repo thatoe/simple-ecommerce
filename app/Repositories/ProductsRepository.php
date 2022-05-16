@@ -13,16 +13,6 @@ class ProductsRepository extends AppRepository
     {
         $this->model = $model;
     }
-
-    // public function store(Request $request)
-    // {
-    //     [$data,$path] = $this->setDataPayload($request);
-    //     $item = $this->model;
-    //     /$data['image'] = $path;
-    //     $item->fill($data);
-    //     $item->save();
-    //      return $item;
-    // }
     
     /**
      * set payload data for products table.
@@ -39,7 +29,7 @@ class ProductsRepository extends AppRepository
             $path = $request->file('image')->store('public/products');
             $data['image'] = $path;
         }
-        $data['price'] = (int)number_format((float) $request->price, 2) * 100;
+        $data['price'] = (int)(number_format((float) $request->price, 2, '.', '') * 100);
         return $data;
     }
 }

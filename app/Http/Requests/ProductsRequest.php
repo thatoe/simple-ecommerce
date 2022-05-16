@@ -27,7 +27,7 @@ class ProductsRequest extends AppRequest
         return [
             'name' => 'required|max:255',
             'price' => 'required',
-            'category_id' => 'required',
+            'category_id' => 'required|integer',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }

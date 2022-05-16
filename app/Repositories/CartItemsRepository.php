@@ -1,22 +1,27 @@
 <?php
 namespace App\Repositories;
 
-use App\ProductCategories;
-use App\Http\Requests\ProductCategoriesRequest;
+use App\CartItems;
+use App\Http\Requests\CartItemsRequest;
 use App\Repositories\AppRepository;
 use Illuminate\Http\Request;
 
-class ProductCategoriesRepository extends AppRepository
+class CartItemsRepository extends AppRepository
 {
     protected $model;
     
-    public function __construct(ProductCategories $model)
+    public function __construct(CartItems $model)
     {
         $this->model = $model;
     }
 
+    public function paginate(Request $request)
+    {
+        return $this->model->paginate($request->input('limit', 10));
+    }
+    
     /**
-     * set payload data for product_categories table.
+     * set payload data for cart_items table.
      * 
      * @param Request $request [description]
      * @return array of data for saving.
