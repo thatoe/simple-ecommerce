@@ -39,7 +39,7 @@ class ProductsRepository extends AppRepository
             $path = $request->file('image')->store('public/products');
             $data['image'] = $path;
         }
-        // dd($request->image);
+        $data['price'] = (int)number_format((float) $request->price, 2) * 100;
         return $data;
     }
 }

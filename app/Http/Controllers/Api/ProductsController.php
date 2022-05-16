@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $items = $this->repository->paginate($request);
-        return response()->json(['items' => $items]);
+        return ProductsResource::collection($items);
     }
   
     /**
@@ -42,12 +42,10 @@ class ProductsController extends Controller
         
         try {
             $item = $this->repository->store($request);
-            return ProductsResource::collection(['item' => $item]);
-            // return response()->json(['item' => $item]);
+            return new ProductsResource($item);
+            // return ProductsResource::collection($item);
         } catch (Exception $e) {
-            die('aa');
-            return ProductResource::collection(['message' => $e->getMessage()], $e->getStatus());
-            // return response()->json(['message' => $e->getMessage()], $e->getStatus());
+            return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
     }
   
@@ -61,9 +59,9 @@ class ProductsController extends Controller
     {
         try {
             $item = $this->repository->update($id, $request);
-            return response()->json(['item' => $item]);
+            return new ProductsResource($item);
         } catch (Exception $e) {
-           return response()->json(['message' => $e->getMessage()], $e->getStatus());
+            return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
     }
   
@@ -77,7 +75,7 @@ class ProductsController extends Controller
     {
         try {
             $item = $this->repository->show($id);
-            return response()->json(['item' => $item]);
+            return new ProductsResource($item);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }

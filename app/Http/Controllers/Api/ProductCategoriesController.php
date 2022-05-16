@@ -20,7 +20,7 @@ class ProductCategoriesController extends Controller
     }
   
     /**
-     * get list of all the posts.
+     * get list of all the productcategories.
      *
      * @param $request: Illuminate\Http\Request
      * @return json response
@@ -29,11 +29,10 @@ class ProductCategoriesController extends Controller
     {
         $items = $this->repository->paginate($request);
         return ProductCategoriesResource::collection($items);
-        // return response()->json(['items' => $items]);
     }
   
     /**
-     * store post data to database table.
+     * store productcategory data to database table.
      *
      * @param $request: App\Http\Requests\ProductCategoriesRequest
      * @return json response
@@ -42,14 +41,14 @@ class ProductCategoriesController extends Controller
     {
         try {
             $item = $this->repository->store($request);
-            return response()->json(['item' => $item]);
+            return new ProductsResource($item);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
     }
   
     /**
-     * update post data to database table.
+     * update productcategory data to database table.
      *
      * @param $request: App\Http\Requests\ProductCategoriesRequest
      * @return json response
@@ -58,7 +57,7 @@ class ProductCategoriesController extends Controller
     {
         try {
             $item = $this->repository->update($id, $request);
-            return response()->json(['item' => $item]);
+            return new ProductsResource($item);
         } catch (Exception $e) {
            return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
@@ -67,14 +66,14 @@ class ProductCategoriesController extends Controller
     /**
      * get single item by id.
      * 
-     * @param integer $id: integer post id.
+     * @param integer $id: integer productcategory id.
      * @return json response.
      */
     public function show($id)
     {
         try {
             $item = $this->repository->show($id);
-            return response()->json(['item' => $item]);
+            return new ProductsResource($item);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], $e->getStatus());
         }
@@ -83,7 +82,7 @@ class ProductCategoriesController extends Controller
     /**
      * delete post by id.
      * 
-     * @param integer $id: integer post id.
+     * @param integer $id: integer productcategory id.
      * @return json response.
      */
     public function destroy($id)
